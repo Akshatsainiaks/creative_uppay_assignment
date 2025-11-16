@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/Creative_upaay_logo.jpeg";
+import logo from "../assets/logo.jpeg";
 
 export default function Landing() {
   const navigate = useNavigate();
