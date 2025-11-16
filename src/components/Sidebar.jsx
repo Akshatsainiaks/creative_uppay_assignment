@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useClerk } from "@clerk/clerk-react"; // ✔ Clerk logout
+import { useClerk } from "@clerk/clerk-react"; 
 
 import ThoughtsBox from "./ThoughtsBox";
 
@@ -17,7 +17,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 export default function Sidebar({ open, setOpen }) {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const { signOut } = useClerk(); // ✔ Clerk signOut
+  const { signOut } = useClerk();
 
   const menuActive = (route) =>
     pathname === route
@@ -75,10 +75,10 @@ export default function Sidebar({ open, setOpen }) {
     navigate("/dashboard");
   };
 
-  // ✔ Correct logout for Clerk
+
   const logout = async () => {
     await signOut();
-    navigate("/", { replace: true }); // go to landing page
+    navigate("/", { replace: true }); 
   };
 
   return (
@@ -87,7 +87,7 @@ export default function Sidebar({ open, setOpen }) {
         open ? "w-72" : "w-20"
       }`}
     >
-      {/* HEADER */}
+
       <div className="h-[88px] flex items-center justify-between px-6">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-full bg-purple-600"></div>
@@ -101,7 +101,7 @@ export default function Sidebar({ open, setOpen }) {
 
       <div className="border-b border-gray-200"></div>
 
-      {/* MAIN MENU */}
+
       <ul className="px-6 py-6 space-y-4">
         <li key="home">
           <Link to="/home" className={`flex items-center gap-4 ${menuActive("/home")}`}>
@@ -151,7 +151,7 @@ export default function Sidebar({ open, setOpen }) {
         </li>
       </ul>
 
-      {/* PROJECTS */}
+   
       {open && (
         <div className="px-6 mt-4">
           <div className="flex items-center justify-between">
@@ -162,7 +162,7 @@ export default function Sidebar({ open, setOpen }) {
           </div>
 
           <ul className="space-y-1 mt-3">
-            {/* Default project */}
+         
             <li key="mobile-app">
               <Link
                 to="/dashboard"
@@ -175,7 +175,7 @@ export default function Sidebar({ open, setOpen }) {
               </Link>
             </li>
 
-            {/* Dynamic Projects */}
+     
             {projects.map((p) => (
               <li
                 key={p.slug}
@@ -203,7 +203,7 @@ export default function Sidebar({ open, setOpen }) {
               </li>
             ))}
 
-            {/* Static Figma projects */}
+        
             <li key="website-redesign">
               <Link
                 to="/website-redesign"
@@ -243,14 +243,14 @@ export default function Sidebar({ open, setOpen }) {
         </div>
       )}
 
-      {/* Thoughts Box */}
+   
       {open && (
         <div className="px-6 mt-10">
           <ThoughtsBox />
         </div>
       )}
 
-      {/* LOGOUT */}
+    
       <li
         key="logout"
         className="list-none px-6 py-4 mt-10 cursor-pointer flex items-center gap-3 text-gray-600 hover:text-red-600"

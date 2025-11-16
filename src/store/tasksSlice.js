@@ -1,4 +1,4 @@
-// src/store/tasksSlice.js
+
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -26,7 +26,7 @@ const slice = createSlice({
       state.filter = d.filter || state.filter;
     },
 
-    // add task + ensure column exists
+
     addTask(state, action) {
       const t = action.payload;
       if (!t?.id) return;
@@ -40,14 +40,13 @@ const slice = createSlice({
       }
     },
 
-    // update existing task object only
     updateTask(state, action) {
       const t = action.payload;
       if (!t?.id) return;
       state.tasks[t.id] = { ...(state.tasks[t.id] || {}), ...t };
     },
 
-    // delete task (remove from columns)
+
     deleteTask(state, action) {
       const { taskId } = action.payload || {};
       if (!taskId) return;
@@ -60,7 +59,7 @@ const slice = createSlice({
       if (state.tasks && state.tasks[taskId]) delete state.tasks[taskId];
     },
 
-    // reorder inside same column
+
     reorderWithinColumn(state, action) {
       const { columnId, startIndex, endIndex } = action.payload;
       const list = state.columns[columnId]?.taskIds;
@@ -69,7 +68,7 @@ const slice = createSlice({
       list.splice(endIndex, 0, removed);
     },
 
-    // move between columns
+
     moveTask(state, action) {
       const { source, destination, draggableId } = action.payload;
       const from = state.columns[source.droppableId];
@@ -91,7 +90,7 @@ const slice = createSlice({
     addActivity(state, action) {
       const act = action.payload;
       if (!act?.id) return;
-      // prevent duplicate ids
+
       if (state.activities.some((a) => a.id === act.id)) return;
       state.activities.unshift(act);
       if (state.activities.length > 300) state.activities.length = 300;

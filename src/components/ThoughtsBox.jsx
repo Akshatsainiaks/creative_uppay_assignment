@@ -18,7 +18,7 @@ export default function ThoughtsBox() {
   return (
     <div className="bg-[#F7F7F7] rounded-xl shadow p-4 flex flex-col items-center text-center relative">
 
-      {/* Smaller glowing bulb */}
+
       <div className="absolute -top-5 flex justify-center w-full">
         <div className="w-12 h-12 rounded-full flex items-center justify-center 
                         bg-yellow-200/40 shadow-[0_0_20px_rgba(255,200,0,0.5)]">

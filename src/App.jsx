@@ -28,7 +28,7 @@ export default function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
 
-      {/* Dashboard layout wraps ALL inside pages */}
+
       <Route
         element={
           <ProtectedRoute>
@@ -36,17 +36,17 @@ export default function App() {
           </ProtectedRoute>
         }
       >
-        {/* DEFAULT PAGE = MOBILE APP */}
+   
         <Route path="/dashboard" element={<Board />} />
 
-        {/* Main sidebar pages */}
+
         <Route path="/home" element={<Home />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/tasks" element={<Tasks />} />
         <Route path="/members" element={<Members />} />
         <Route path="/settings" element={<Settings />} />
 
-        {/* PROJECT PAGES — SIMPLE ROUTES AS YOU REQUESTED */}
+     
         <Route path="/website-redesign" element={<WebsiteRedesign />} />
         <Route path="/design-system" element={<DesignSystem />} />
         <Route path="/wireframes" element={<Wireframes />} />
