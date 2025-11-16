@@ -1,16 +1,45 @@
-# React + Vite
+SHOWING FEATURES BY VIDEO 
+VIDEO LINK : https://drive.google.com/file/d/186Qht98u30YF6xmWrLbgjNRuFzgogti7/view?usp=sharing
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time collaborative task management application built for Creative Upaay Full Stack Development Assignment.
+🚀 Live Demo
+Deployed URL: https://creative-uppay-assignment.vercel.app/
+Video Demo: https://drive.google.com/file/d/186Qht98u30YF6xmWrLbgjNRuFzgogti7/view?usp=sharing
+🛠️ Tech Stack
 
-Currently, two official plugins are available:
+Frontend: React.js, Tailwind CSS, Material-UI
+Authentication: Clerk
+State Management: Redux with Local Storage persistence
+Real-time: Socket.io for live collaboration
+Features: Real-time notifications, activity logs, live calendar with clock
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✨ Features Implemented
+Level 1 (Core)
 
-## React Compiler
+Dashboard UI matching Figma design
+Add, edit, and delete tasks
+Drag & drop tasks between sections (To Do, In Progress, Done)
+Redux state management with Local Storage persistence
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Level 2 (Advanced)
 
-## Expanding the ESLint configuration
+User authentication with Clerk (sign-up/login)
+Subtasks functionality
+Socket.io integration for real-time multi-user collaboration
+Activity logs tracking all task changes
+Project management feature
+Real-time calendar with live clock
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+Frontend (.env):
+VITE_REACT_APP_CLERK_PUBLISHABLE_KEY=your_clerk_key
+
+How to run the project locally. 
+
+FRONTEND -> cd DASHBOARD UI
+            npm run dev
+
+BACKEND  -> cd backend
+            node index.js
+
+
